@@ -1,21 +1,29 @@
+import { Addition }         from "../Executors/AdditionExecutor.js"
+import { Substraction }     from "../Executors/SubstractionExecutor.js"
+
 class Factory {
-    static list = {
+
+    // constructor() {
+
+    // }
+
+    _list = {
         "+" : Addition,
         "-" : Substraction
     }
 
     _createCommand(command) {
-        const Cmd = Factory.list[command[0]]
+        const Cmd = this._list[command[0]]
         const cmd = new Cmd(command)
         return cmd
         
     }
 
     createCommands(listOfCommands) {
-        const factory = new Factory()
-        const commands = []
-        for (let i = 0; i < listOfCommands.length; i++) {
-            commands[i] = factory._createCommand(listOfCommands[i])
+        const insidefactory = new Factory()
+        let commands = []
+        for (let i = 0; i < listOfCommands.cmdList.length; i++) {
+            commands[i] = insidefactory._createCommand(listOfCommands.cmdList[i])
         }
         return commands
     }

@@ -1,7 +1,11 @@
 class QueueHandler {
-    run(command) {
-        return command._execute()
+    run(commands) {
+        for (let i = 0; i < commands.length; i++) {
+            console.log(commands[i]._execute())
+        }
     }
+
+
 }
 
 export { QueueHandler }

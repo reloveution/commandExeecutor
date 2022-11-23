@@ -1,4 +1,4 @@
-export class Substraction {
+class Substraction {
     constructor(command) {
         this.value1 = command[1]
         this.value2 = command[2]
@@ -9,3 +9,5 @@ export class Substraction {
     }
 
 }
+
+export { Substraction }
